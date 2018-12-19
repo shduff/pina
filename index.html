@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>🍍Piña🍍</title>
 </head>
 <body>
 	<div class="left">
@@ -13,8 +13,8 @@
 
 	<div class="center">
 		<br><br><br>
-		<h1 style="font-size:3em;text-align:center;margin:0;">We bring you...</h1>
-		<h1 style="font-size:4em;text-align:center;margin:0;"class="blink">¿Piña or Piña?</h1>
+		<h1 style="font-size:3em;text-align:center;margin:0;" class="intro">We bring you...</h1>
+		<h1 style="font-size:4em;text-align:center;margin:0;" class="blink">¿Piña or Piña?</h1>
 		<br><br><br>
 		<div id="pina" class="dog">
 			<p id="click">Click me!</p>
@@ -112,6 +112,24 @@
 		background-position:center center;
 		border-radius:1em;
 		border:solid black 3px;
+	}
+	@media only screen and (max-width: 768px) {
+		div.center {
+			display:block;
+			width:100%;
+		}
+		div.center h1.blink {
+			font-size:1em;
+			margin: 0 0 0 1em;
+		}
+		#pina {
+			height:30em;
+			width:30em;
+		}
+		div.right, div.left, h1.intro {
+			display:none;
+		}
+
 	}
 	</style>
 
