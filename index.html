@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class="left">
+		<p>You've (maybe) heard of<br>chihuahua or<br>blueberry muffin!?</p>
+		<div id="blue"></div>
+	</div>
+
+	<div class="center">
+		<br><br><br>
+		<h1 style="font-size:3em;text-align:center;margin:0;">We bring you...</h1>
+		<h1 style="font-size:4em;text-align:center;margin:0;"class="blink">¿Piña or Piña?</h1>
+		<br><br><br>
+		<div id="pina" class="dog">
+		</div>
+	</div>
+
+	<div class="right">
+		<br><br><br>
+		<p>Perhaps you've heard of<br>puppy of bagel!?</p>
+		<div id="bagel"></div>
+	</div>
+
+	<style>
+	body {
+		font-family:Courier;
+		margin:auto;
+	}
+	p {
+		font-size:1.5em;
+		text-align:center;
+	}
+	div.left {
+		width:29%;
+		display:inline-block;
+		padding-left:1%;
+		transform:rotate(15deg);
+		position:relative;
+	}
+	#blue {
+		height:20em;
+		width:20em;
+		margin:auto;
+		background-repeat: no-repeat;
+		background-image:url('./blue.jpg');
+		background-size:cover;
+		background-position:center center;
+	}
+
+	div.center {
+		width:40%;
+		display:inline-block;
+	}
+	#pina {
+		height:30em;
+		width:30em;
+		margin:auto;
+		background-repeat: no-repeat;
+		background-image:url('./splash.gif');
+		background-size:cover;
+		background-position:center center;
+		border:solid darkgreen 3px;
+		border-radius:.5em;
+		
+		transition:background-image 2s ease-out;
+	}
+	.blink {
+	  animation: blinker 1s linear infinite;
+	}
+
+	@keyframes blinker {
+	  50% {
+	    opacity: 0;
+	  }
+	}
+
+	div.right {
+		width:28%;
+		display:inline-block;
+		transform:rotate(-10deg);
+	}
+	#bagel {
+		height:20em;
+		width:20em;
+		margin:auto;
+		background-repeat: no-repeat;
+		background-image:url('./bagel.jpg');
+		background-size:cover;
+		background-position:center center;
+	}
+	</style>
+
+	<script>
+		document.querySelectorAll('.left')[0].style.maxHeight = window.innerHeight + 'px';
+		document.querySelectorAll('.center')[0].style.maxHeight = window.innerHeight + 'px';
+		document.querySelectorAll('.right')[0].style.maxHeight = window.innerHeight + 'px';
+
+
+		let numDogPics = 17;
+		let listDogPics = [];
+		let numFruitPics = 14;
+		let listFruitPics = [];
+
+		for (let i=1; i<=numDogPics; i++) {
+			listDogPics.push('./dog/' + i + '.jpg');
+		}
+
+		for (let j=1; j<=numFruitPics; j++) {
+			listFruitPics.push('./fruit/' + j + '.jpg');
+		}
+
+		function getRandomInt(max) {
+			return Math.floor(Math.random() * Math.floor(max));
+		}
+
+		let pinaDiv = document.getElementById('pina');
+
+		pinaDiv.addEventListener('click', function() {
+			if (pinaDiv.classList.contains('dog')) {
+				pinaDiv.classList.remove('dog');
+				pinaDiv.classList.add('fruit');
+				pinaDiv.style.backgroundImage = 'url(' + listFruitPics[getRandomInt(listFruitPics.length)] + ')';
+
+			} else if (pinaDiv.classList.contains('fruit')) {
+				pinaDiv.classList.remove('fruit');
+				pinaDiv.classList.add('dog');
+				pinaDiv.style.backgroundImage = 'url(' + listDogPics[getRandomInt(listDogPics.length)] + ')';
+			}
+		});
+
+	</script>
+
+</body>
+</html>
