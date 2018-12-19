@@ -6,7 +6,9 @@
 <body>
 	<div class="left">
 		<p>You've (maybe) heard of<br>chihuahua or<br>blueberry muffin!?</p>
-		<div id="blue"></div>
+		<a href="https://blog.cloudsight.ai/chihuahua-or-muffin-1bdf02ec1680">
+			<div id="blue"></div>
+		</a>
 	</div>
 
 	<div class="center">
@@ -15,13 +17,17 @@
 		<h1 style="font-size:4em;text-align:center;margin:0;"class="blink">¿Piña or Piña?</h1>
 		<br><br><br>
 		<div id="pina" class="dog">
+			<p id="click">Click me!</p>
 		</div>
+
 	</div>
 
 	<div class="right">
 		<br><br><br>
 		<p>Perhaps you've heard of<br>puppy of bagel!?</p>
-		<div id="bagel"></div>
+		<a href="https://knowyourmeme.com/memes/puppy-or-bagel">
+			<div id="bagel"></div>
+		</a>
 	</div>
 
 	<style>
@@ -33,6 +39,9 @@
 	p {
 		font-size:1.5em;
 		text-align:center;
+	}
+	.hidden {
+		display:none;
 	}
 	div.left {
 		width:29%;
@@ -54,7 +63,7 @@
 		background-size:cover;
 		background-position:center center;
 		border-radius:1em;
-		border:solid darkblue 3px;
+		border:solid black 3px;
 	}
 
 	div.center {
@@ -102,7 +111,7 @@
 		background-size:cover;
 		background-position:center center;
 		border-radius:1em;
-		border:solid darkblue 3px;
+		border:solid black 3px;
 	}
 	</style>
 
@@ -130,8 +139,13 @@
 		}
 
 		let pinaDiv = document.getElementById('pina');
+		let clickDiv = document.getElementById('click');
 
 		pinaDiv.addEventListener('click', function() {
+			if (!clickDiv.classList.contains('hidden')) {
+				clickDiv.style.transition = '1s';
+				clickDiv.classList.add('hidden');	
+			}
 			if (pinaDiv.classList.contains('dog')) {
 				pinaDiv.classList.remove('dog');
 				pinaDiv.classList.add('fruit');
