@@ -16,7 +16,7 @@
 		<h1 style="font-size:3em;text-align:center;margin:0;" class="intro">We bring you...</h1>
 		<h1 style="font-size:4em;text-align:center;margin:0;" class="blink">¿Piña or Piña?</h1>
 		<br><br><br>
-		<div id="pina" class="dog">
+		<div id="pina">
 			<p id="click">Click me!</p>
 		</div>
 
@@ -164,12 +164,13 @@
 			// 	clickDiv.style.transition = '1s';
 			// 	clickDiv.classList.add('hidden');	
 			// }
+
 			if (pinaDiv.classList.contains('dog')) {
 				pinaDiv.classList.remove('dog');
 				pinaDiv.classList.add('fruit');
 				pinaDiv.style.backgroundImage = 'url(' + listFruitPics[getRandomInt(listFruitPics.length)] + ')';
 
-			} else if (pinaDiv.classList.contains('fruit')) {
+			} else if (pinaDiv.classList.contains('fruit') || (!pinaDiv.classList.contains('dog') && !pinaDiv.classList.contains('fruit'))) {
 				pinaDiv.classList.remove('fruit');
 				pinaDiv.classList.add('dog');
 				pinaDiv.style.backgroundImage = 'url(' + listDogPics[getRandomInt(listDogPics.length)] + ')';
