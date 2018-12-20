@@ -5,7 +5,7 @@
 </head>
 <body>
 	<div class="left">
-		<p>You've (maybe) heard of<br>chihuahua or<br>blueberry muffin!?</p>
+		<p>Maybe you've heard of<br>chihuahua or<br>blueberry muffin!?</p>
 		<a href="https://blog.cloudsight.ai/chihuahua-or-muffin-1bdf02ec1680">
 			<div id="blue"></div>
 		</a>
@@ -34,7 +34,8 @@
 	body {
 		font-family:Courier;
 		margin:auto;
-		background-color:pink;
+		background-color:yellow;
+		color:green;
 	}
 	p {
 		font-size:1.5em;
@@ -49,6 +50,7 @@
 		padding-left:1%;
 		transform:rotate(15deg);
 		position:relative;
+		color:blue;
 	}
 	div.left:hover {
 		transform:rotate(-4deg);
@@ -63,7 +65,7 @@
 		background-size:cover;
 		background-position:center center;
 		border-radius:1em;
-		border:solid black 3px;
+		border:solid blue 3px;
 	}
 
 	div.center {
@@ -78,10 +80,13 @@
 		background-image:url('./splash.gif');
 		background-size:cover;
 		background-position:center center;
-		border:solid black 3px;
+		border:solid green 3px;
 		border-radius:.5em;
 		
 		transition:background-image 1s ease-out;
+	}
+	#pina p {
+		color:black;
 	}
 	.blink {
 	  animation: blinker 1s linear infinite;
@@ -97,6 +102,7 @@
 		width:28%;
 		display:inline-block;
 		transform:rotate(-10deg);
+		color:brown;
 	}
 	div.right:hover {
 		transform:rotate(4deg);
@@ -111,7 +117,7 @@
 		background-size:cover;
 		background-position:center center;
 		border-radius:1em;
-		border:solid black 3px;
+		border:solid brown 3px;
 	}
 	@media only screen and (max-width: 768px) {
 		div.center {
